@@ -51,7 +51,7 @@ void addProducts() {
 }
 
 /////////////////////////////=> Customer Functions <=////////////////////////////
-void addCustomerss() {
+void addCustomers() {
 
 }
 
@@ -102,7 +102,7 @@ int main() {
 		cout << "\n\t\t   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
 		cout << "\n\t\t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
 		cout << "\n\t\t@@@@ -------> WELCOME to: <------- @@@@";
-		cout << "\n\t\t@@@@-> Online > Clothes Shop Sys <-@@@@";
+		cout << "\n\t\t@@@@-> Online => Marketplace Sys <-@@@@";
 		cout << "\n\t\t @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
 		cout << "\n\t\t   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" << "\n\n";
 

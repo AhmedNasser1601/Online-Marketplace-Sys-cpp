@@ -11,7 +11,6 @@ class Seller {
 public:
 	Seller();
 	Seller(T, string, string);
-
 	Seller addSeller();
 	void display();
 	~Seller(void);

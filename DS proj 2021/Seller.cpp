@@ -1,5 +1,4 @@
-#include "Seller.h" //Main Calling
-#include "Product.h" //Extension
+#include "Seller.h"
 
 #include <iostream>
 #include <stack>
@@ -44,6 +43,4 @@ void Seller<T>::display() {
 }
 
 template <class T>
-Seller<T>::~Seller(void) {
-
-}
+Seller<T>::~Seller(void) {}

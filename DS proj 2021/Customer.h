@@ -1,12 +1,11 @@
 #pragma once
 
-class Customer
-{
+class Customer {
 	int count = 0;
-public:
-	void add_customer();
-	void display();
-	/*Customer();
-	~Customer();*/
-};
 
+public:
+	Customer();
+	void addCustomer();
+	void display();
+	~Customer(void);
+};

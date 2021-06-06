@@ -1,41 +1,59 @@
 #include "Customer.h"
-#include<iostream>
-#include<String>
+
+#include <iostream>
+#include <stack>
+#include <queue>
+#include <list>
+#include <string>
+#include <assert.h>
+
 using namespace std;
-struct customer_data{
+
+struct customer_data {
 	string name;
 	int id;
 	string address;
 	int phone;
 	string email;
-};
-customer_data c[10];
-void Customer::add_customer(){
+}c[10];
+
+Customer::Customer() {}
+
+void Customer::addCustomer() {
 	char ch;
+
 	cout << "enter the num of customer ";
-	int size;
-	cin >> size;
-	for (int i = 0; i < size; i++){
-		cout << "enter the name of the customer num "<<i+1 << endl;
+	int size; cin >> size;
+
+	for (int i = 0; i < size; i++) {
+		cout << "enter Name of Customer (" << i + 1 << "): ";
 		cin >> c[i].name;
-		cout << "enter the id " << endl;
+
+		cout << "Enter Id: ";
 		cin >> c[i].id;
-		cout << "enter the address  " << endl;
+
+		cout << "Enter Address: ";
 		cin >> c[i].address;
-		cout << "enter the phone " << endl;
+
+		cout << "Enter Phone: ";
 		cin >> c[i].phone;
-		cout << "enter the email " << endl;
+
+		cout << "Enter Email: ";
 		cin >> c[i].email;
+
 		count++;
-
 	}
 
 }
+
 void Customer::display() {
-
-	for (int i = 0; i < count; i++){
-
-		cout << c[i].name << "\t" << c[i].id << "\t" << c[i].email << "\t" << c[i].address << "\t" << c[i].phone << endl;
+	for (int i = 0; i < count; i++) {
+		cout << c[i].name << "\t"
+			<< c[i].id << "\t"
+			<< c[i].email << "\t"
+			<< c[i].address << "\t"
+			<< c[i].phone << endl;
 	}
-
 }
+
+Customer::~Customer(void) {}
