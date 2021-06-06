@@ -10,10 +10,12 @@
 using namespace std;
 
 template <class T>
-Product<T>::Product() {}
+Product<T>::Product() {
+
+}
 
 template<class T>
-Product<T>::Product(int i, string n, float p, string c, int si) {
+Product<T>::Product(T i, string n, float p, string c, T si) {
 	id = i;
 	name = n;
 	price = p;
@@ -22,8 +24,8 @@ Product<T>::Product(int i, string n, float p, string c, int si) {
 }
 
 template<class T>
-void Product<T>::addProduct() {
-	int Id, SellerId;
+Product<T> Product<T>::addProduct() {
+	T Id, SellerId;
 	string Name, Category;
 	float Price;
 
@@ -39,9 +41,14 @@ void Product<T>::addProduct() {
 }
 
 template<class T>
-T Product<T>::fun() {
-
-	return T();
+void Product<T>::display() {
+	cout
+		<< "Id: " << id
+		<< "\tName: " << name
+		<< "\Price: " << price
+		<< "\tCategory: " << category
+		<< "\tSeller Id: " << sellerId
+		<< endl;
 }
 
 template <class T>

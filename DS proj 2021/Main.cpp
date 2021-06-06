@@ -9,16 +9,19 @@
 
 #include "Seller.cpp"
 #include "Product.cpp"
+#include "Customer.cpp"
 
 using namespace std;
 
-static int vsCounter = 0, vpCounter = 0;
+static int vsCounter = 0, vpCounter = 0, vcCounter = 0;
 
 Seller<int> S;
 Product<int> P;
+Customer<int> C;
 
 vector<Seller<int>> vls;
 vector<Product<int>> vlp;
+vector<Customer <int>> vlc;
 
 /////////////////////////////=> Seller Functions <=/////////////////////////////
 void addSellers() {
@@ -46,25 +49,34 @@ void addProducts() {
 	int sizeP; cin >> sizeP;
 
 	for (int i = 0; i < sizeP; i++) {
-
+		vlp.push_back(P.addProduct());
+		vpCounter++;
 	}
 }
 
 /////////////////////////////=> Customer Functions <=////////////////////////////
 void addCustomers() {
+	cout << "Enter num of the new Customers: ";
+	int sizeC; cin >> sizeC;
 
+	for (int i = 0; i < sizeC; i++) {
+		vlc.push_back(C.addCustomer());
+		vcCounter++;
+	}
 }
 
 void displayCustomers() {
-
+	for (int i = 0; i < vcCounter; i++) {
+		vlc[i].display();
+	}
 }
 
-void displayProducts() {
-
+void sizeCustomers() {
+	cout << "Customers num is: " << vcCounter << endl;
 }
 
-void sizeProducts() {
-	cout << "Products num is: " << vpCounter << endl;
+void buyProducts() {
+	P.display();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -88,6 +100,7 @@ bool Back_Option_fn(int back_option) {
 	system("cls");
 }
 
+////////////////////////////////////////////////////////////////////////////////
 int main() {
 	/////--> Initializing <--/////
 	int choiseMenu = 0;
@@ -147,26 +160,26 @@ int main() {
 			{
 				if (choiseSub == 1) { //Add Sellers
 					system("cls");
-					cout << "\t1\n";
+					cout << "\tAdd new Sellers\n\n";
 					addSellers();
 				}
 
 				if (choiseSub == 2) { //Display Sellers
 					system("cls");
-					cout << "\t2\n";
+					cout << "\tDisplay Sellers\n\n";
 					displaySellers();
 				}
 
 				if (choiseSub == 3) { //Sellers Number
 					system("cls");
-					cout << "\t3\n";
+					cout << "\tSellers Number\n\n";
 					sizeSellers();
 				}
 
 				if (choiseSub == 4) { //Add Products
 					system("cls");
-					cout << "\t3\n";
-					sizeSellers();
+					cout << "\tAdd new Products\n\n";
+					addProducts();
 				}
 
 				if (choiseSub == 0) {
@@ -202,26 +215,26 @@ int main() {
 			{
 				if (choiseSub == 1) { //Add Customers
 					system("cls");
-					cout << "\t1\n";
-
+					cout << "\tAdd new Customers\n\n";
+					addCustomers();
 				}
 
 				if (choiseSub == 2) { //Display Customers
 					system("cls");
-					cout << "\t2\n";
-
+					cout << "\tDisplay Customers\n\n";
+					displayCustomers();
 				}
 
 				if (choiseSub == 3) { //Customers Number
 					system("cls");
-					cout << "\t3\n";
-
+					cout << "\tCustomer Number\n\n";
+					sizeCustomers();
 				}
 
 				if (choiseSub == 4) { //Buy Products
 					system("cls");
-					cout << "\t3\n";
-
+					cout << "\tBuy Products\n\n";
+					buyProducts();
 				}
 
 				if (choiseSub == 0) {

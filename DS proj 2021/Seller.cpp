@@ -10,7 +10,9 @@
 using namespace std;
 
 template<class T>
-Seller<T>::Seller() {}
+Seller<T>::Seller() {
+
+}
 
 template<class T>
 Seller<T>::Seller(T i, string n, string e) {
@@ -21,7 +23,7 @@ Seller<T>::Seller(T i, string n, string e) {
 
 template<class T>
 Seller<T> Seller<T>::addSeller() {
-	int Id;
+	T Id;
 	string Name, Email;
 
 	cout << "Enter Id: "; cin >> Id;

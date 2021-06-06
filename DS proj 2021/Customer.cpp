@@ -9,51 +9,50 @@
 
 using namespace std;
 
-struct customer_data {
-	string name;
-	int id;
-	string address;
-	int phone;
-	string email;
-}c[10];
-
-Customer::Customer() {}
-
-void Customer::addCustomer() {
-	char ch;
-
-	cout << "enter the num of customer ";
-	int size; cin >> size;
-
-	for (int i = 0; i < size; i++) {
-		cout << "enter Name of Customer (" << i + 1 << "): ";
-		cin >> c[i].name;
-
-		cout << "Enter Id: ";
-		cin >> c[i].id;
-
-		cout << "Enter Address: ";
-		cin >> c[i].address;
-
-		cout << "Enter Phone: ";
-		cin >> c[i].phone;
-
-		cout << "Enter Email: ";
-		cin >> c[i].email;
-
-		count++;
-	}
-
+template<class T>
+Customer<T>::Customer() {
+	id = 0;
+	phone = 0;
+	name = "";
+	address = "";
+	email = "";
 }
 
-void Customer::display() {
-	for (int i = 0; i < count; i++) {
-		cout << c[i].name << "\t"
-			<< c[i].id << "\t"
-			<< c[i].email << "\t"
-			<< c[i].address << "\t"
-			<< c[i].phone << endl;
-	}
+template<class T>
+Customer<T>::Customer(string N, T I, string A, T P, string E) {
+	name = N;
+	id = I;
+	address = A;
+	phone = P;
+	email = E;
 }
 
-Customer::~Customer(void) {}
+template<class T>
+Customer<T> Customer<T>::addCustomer() {
+	T Id, Phone;
+	string Name, Address, Email;
+
+	cout << "Enter Name: "; cin >> Name;
+	cout << "Enter Id: "; cin >> Id;
+	cout << "Enter Address: "; cin >> Address;
+	cout << "Enter Phone: "; cin >> Phone;
+	cout << "Enter Email: "; cin >> Email;
+
+	Customer<T> c(Name, Id, Address, Phone, Email);
+
+	return c;
+}
+
+template<class T>
+void Customer<T>::display() {
+	cout
+		<< "Name: " << name
+		<< "\tId: " << id
+		<< "\tAddress: " << address
+		<< "\tPhone: " << phone
+		<< "\tEmail: " << email
+		<< endl;
+}
+
+template <class T>
+Customer<T>::~Customer(void) {}

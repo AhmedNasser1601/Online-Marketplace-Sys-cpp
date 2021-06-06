@@ -11,8 +11,8 @@ class Product {
 
 public:
 	Product();
-	Product(int, string, float, string, int);
-	void addProduct();
-	T fun();
+	Product(T, string, float, string, T);
+	Product addProduct();
+	void display();
 	~Product(void);
 };
