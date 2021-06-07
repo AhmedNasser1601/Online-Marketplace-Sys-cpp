@@ -38,7 +38,10 @@ void Cart<T>::cartData() {
 	T flag = 1;
 
 	while (flag == 1) {
-		cout << "Add to cart press :-  1" << endl << "delete item from cart  press :-  2" << endl << "display all items in cart press  :-  3" << endl;
+		cout
+			<< "Add to cart press :-  1" << endl
+			<< "delete item from cart  press :-  2" << endl
+			<< "display all items in cart press  :-  3" << endl;
 		T choice; cin >> choice;
 
 		if (choice == 1) {
