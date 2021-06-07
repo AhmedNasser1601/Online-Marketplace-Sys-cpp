@@ -1,11 +1,13 @@
-#include <iostream>
-#include <fstream>
-#include <stack>
-using namespace std;
-class cart__
-{
-public:
-	void printall();
-	void cart_data();
-};
+#pragma once
+#include<string>
 
+using namespace std;
+
+template <class T>
+class Cart {
+public:
+	Cart();
+	void displayAll();
+	void cartData();
+	~Cart(void);
+};

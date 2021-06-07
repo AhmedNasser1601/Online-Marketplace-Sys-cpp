@@ -10,6 +10,7 @@
 #include "Seller.cpp"
 #include "Product.cpp"
 #include "Customer.cpp"
+//#include "Cart.cpp"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ static int vsCounter = 0, vpCounter = 0, vcCounter = 0;
 Seller<int> S;
 Product<int> P;
 Customer<int> C;
+//Cart<int> CC;
 
 vector<Seller<int>> vls;
 vector<Product<int>> vlp;

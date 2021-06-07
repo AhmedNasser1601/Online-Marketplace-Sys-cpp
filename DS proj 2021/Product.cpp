@@ -45,7 +45,7 @@ void Product<T>::display() {
 	cout
 		<< "Id: " << id
 		<< "\tName: " << name
-		<< "\Price: " << price
+		<< "\tPrice: " << price
 		<< "\tCategory: " << category
 		<< "\tSeller Id: " << sellerId
 		<< endl;

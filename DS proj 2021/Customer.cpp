@@ -11,11 +11,7 @@ using namespace std;
 
 template<class T>
 Customer<T>::Customer() {
-	id = 0;
-	phone = 0;
-	name = "";
-	address = "";
-	email = "";
+
 }
 
 template<class T>
