@@ -78,7 +78,6 @@ void sizeCustomers() {
 }
 
 void buyProducts() {
-	P.display();
 	for (int i = 0; i < vpCounter; i++) {
 		vlp[i].display();
 	}
