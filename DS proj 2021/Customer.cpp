@@ -33,6 +33,7 @@ Customer<T> Customer<T>::addCustomer() {
 	cout << "Enter Address: "; cin >> Address;
 	cout << "Enter Phone: "; cin >> Phone;
 	cout << "Enter Email: "; cin >> Email;
+	cout << endl;
 
 	Customer<T> c(Name, Id, Address, Phone, Email);
 

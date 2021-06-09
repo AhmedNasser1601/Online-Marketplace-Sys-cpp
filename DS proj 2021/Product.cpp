@@ -34,6 +34,7 @@ Product<T> Product<T>::addProduct() {
 	cout << "Enter Price: "; cin >> Price;
 	cout << "Enter Category: "; cin >> Category;
 	cout << "Enter Seller Id: "; cin >> SellerId;
+	cout << endl;
 
 	Product<T> p(Id, Name, Price, Category, SellerId);
 

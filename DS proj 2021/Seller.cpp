@@ -29,6 +29,7 @@ Seller<T> Seller<T>::addSeller() {
 	cout << "Enter Id: "; cin >> Id;
 	cout << "Enter Name: "; cin >> Name;
 	cout << "Enter Email: "; cin >> Email;
+	cout << endl;
 
 	Seller<T> s(Id, Name, Email);
 
