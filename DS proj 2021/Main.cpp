@@ -79,6 +79,9 @@ void sizeCustomers() {
 
 void buyProducts() {
 	P.display();
+	for (int i = 0; i < vpCounter; i++) {
+		vlp[i].display();
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -146,7 +149,7 @@ int main() {
 			cout << "\n\t° Enter >-[1]-> to:-> Add New Sellers\n";
 			cout << "\n\t° Enter >-[2]-> to:-> Display Sellers\n";
 			cout << "\n\t° Enter >-[3]-> to:-> Sellers Number\n";
-			cout << "\n\t° Enter >-[3]-> to:-> Add new Products\n";
+			cout << "\n\t° Enter >-[4]-> to:-> Add new Products\n";
 			cout << "\n\n\t° Enter >-[0]-> to:-> Return Main-Menu\n\n";
 
 			cout << "\n\n\n*********\n";
@@ -201,7 +204,7 @@ int main() {
 			cout << "\n\t° Enter >-[1]-> to:-> Add New Customers\n";
 			cout << "\n\t° Enter >-[2]-> to:-> Display Customers\n";
 			cout << "\n\t° Enter >-[3]-> to:-> Customers Number\n";
-			cout << "\n\t° Enter >-[3]-> to:-> Buy Products\n";
+			cout << "\n\t° Enter >-[4]-> to:-> Buy Products\n";
 			cout << "\n\n\t° Enter >-[0]-> to:-> Return Main-Menu\n\n";
 
 			cout << "\n\n\n*********\n";
