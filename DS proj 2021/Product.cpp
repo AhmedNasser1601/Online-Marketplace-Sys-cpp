@@ -75,6 +75,7 @@ void Product<T>::display() {
 		<< "\tPrice: " << price
 		<< "\tCategory: " << category
 		<< "\tSeller Id: " << sellerId
+		<< "\tQuantity: " << quantity
 		<< endl;
 }
 

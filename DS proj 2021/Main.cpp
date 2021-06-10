@@ -8,7 +8,6 @@
 #include "Seller.cpp"
 #include "Product.cpp"
 #include "Customer.cpp"
-//#include "Cart.cpp"
 
 using namespace std;
 
@@ -17,11 +16,12 @@ static int vsCounter = 0, vpCounter = 0, vcCounter = 0;
 Seller<int> S;
 Product<int> P;
 Customer<int> C;
-//Cart<int> CC;
 
 vector<Seller<int>> vls;
 vector<Product<int>> vlp;
 vector<Customer <int>> vlc;
+
+vector<Product<int>> Cart;
 
 /////////////////////////////=> Seller Functions <=/////////////////////////////
 void addSellers() {
@@ -58,67 +58,10 @@ void addProducts() {
 	}
 }
 
-/////////////////////////////=> Customer Functions <=////////////////////////////
-void addCustomers() {
-	cout << "Enter num of the new Customers: ";
-	int sizeC; cin >> sizeC;
-
-	for (int i = 0; i < sizeC; i++) {
-		cout << "\nEnter Customer (" << i + 1 << ") Data :-\n";
-
-		vlc.push_back(C.addCustomer());
-		vcCounter++;
-	}
-}
-
-void displayCustomers() {
-	for (int i = 0; i < vcCounter; i++) {
-		vlc[i].display();
-	}
-}
-
-void sizeCustomers() {
-	cout << "Customers num is: " << vcCounter << endl;
-}
-
-void buyProducts() {
-	for (int i = 0; i < vpCounter; i++) {
-		vlp[i].display();
-	}
-
-	char again = 'Y';
-
-	while (again == 'y' || again == 'Y') {
-		cout << "\n\n\tEnter Product Id you want to buy: ";
-		int id; cin >> id;
-
-		cout << "Enter Quantity: ";
-		int quantity; cin >> quantity;
-
-		for (int i = 0; i < vpCounter; i++) {
-			if (vlp[i].searchId(id)) {
-				if (vlp[i].checkQuantity(quantity)) {
-					vlp[i].updateQuantity(quantity);
-
-					//Add =(to)=> Cart Here
-
-					break;
-				}
-				else {
-					cout << "\nSorry, You can't add this Product, No available Quantity .!\n";
-					break;
-				}
-			}
-		}
-
-		cout << "\nContinue Shopping (Y/N)? : "; cin >> again;
-	}
-}
-
 /////////////////////////////=> Product Functions <=////////////////////////////
 void searchName() {
-	cout << "Enter the Product Name to Search: ";
-	string name; cin >> name;
+	cout << "\nEnter the Product Name to Search: ";
+	string name; cin >> name; cout << endl;
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchName(name))
@@ -126,8 +69,8 @@ void searchName() {
 	}
 }
 void searchId() {
-	cout << "Enter the Product Id to Search: ";
-	int id; cin >> id;
+	cout << "\nEnter the Product Id to Search: ";
+	int id; cin >> id; cout << endl;
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchId(id))
@@ -136,8 +79,8 @@ void searchId() {
 }
 
 void searchCategory() {
-	cout << "Enter the Category Name to Search: ";
-	string category; cin >> category;
+	cout << "\nEnter the Category Name to Search: ";
+	string category; cin >> category; cout << endl;
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchCategory(category))
@@ -164,6 +107,73 @@ void searchProducts() {
 
 	else {
 		cout << "\n\n\tInvalid Option\n\n";
+	}
+}
+
+void displayProducts() {
+	for (int i = 0; i < vpCounter; i++) {
+		vlp[i].display();
+	}
+}
+
+/////////////////////////////=> Customer Functions <=////////////////////////////
+void addCustomers() {
+	cout << "Enter num of the new Customers: ";
+	int sizeC; cin >> sizeC;
+
+	for (int i = 0; i < sizeC; i++) {
+		cout << "\nEnter Customer (" << i + 1 << ") Data :-\n";
+
+		vlc.push_back(C.addCustomer());
+		vcCounter++;
+	}
+}
+
+void displayCustomers() {
+	for (int i = 0; i < vcCounter; i++) {
+		vlc[i].display();
+	}
+}
+
+void sizeCustomers() {
+	cout << "Customers num is: " << vcCounter << endl;
+}
+
+void buyProducts() {
+	displayProducts(); //Display all the Products
+
+	char again = 'Y';
+
+	while (again == 'y' || again == 'Y' || again == '1') {
+		cout << "\n\n\tEnter Product Id you want to buy: ";
+		int id; cin >> id;
+
+		cout << "\tEnter Quantity: ";
+		int quantity; cin >> quantity;
+
+		int flagAvailable = 0;
+
+		for (int i = 0; i < vpCounter; i++) {
+			if (vlp[i].searchId(id)) {
+				flagAvailable = 1;
+
+				if (vlp[i].checkQuantity(quantity)) {
+					vlp[i].updateQuantity(quantity);
+					Cart.push_back(vlp[i]); //Add =(to)=> Cart
+					cout << "\nAdded Successfully\n";
+					break;
+				}
+				else {
+					cout << "\nSorry, You can't add this Product, No available Quantity .!\n";
+					break;
+				}
+			}
+		}
+
+		if (flagAvailable != 1)
+			cout << "\n\tThis Id not Found among Products\n";
+
+		cout << "\nContinue Shopping (Y/N)? : "; cin >> again;
 	}
 }
 
