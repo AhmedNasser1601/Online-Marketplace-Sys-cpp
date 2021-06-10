@@ -2,10 +2,8 @@
 #include <stack>
 #include <queue>
 #include <list>
-#include <iterator>
 #include <vector>
 #include <string>
-#include <assert.h>
 
 #include "Seller.cpp"
 #include "Product.cpp"
