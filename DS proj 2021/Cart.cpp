@@ -1,7 +1,6 @@
-#include "Cart.h";
+#include "Cart.h"
 
 #include <iostream>
-#include <fstream>
 #include <stack>
 #include <queue>
 #include <list>
@@ -10,44 +9,34 @@
 
 using namespace std;
 
-stack<Cart<int>> z;
+stack<int> z;
 
-template<class T>
-Cart<T>::Cart() {
-
-}
-
-template<class T>
-void Cart<T>::displayAll() {
-	/*ofstream cart_cart;
-	cart_cart.open("2ndcart.txt");
-
+template <class T>
+void Cart<T>::printall() {
 	cout << "items in cart is :" << endl;
 
 	while (!z.empty()) {
 		cout << z.top() << endl;
-		cart_cart << "item in cart is" << z.top() << endl;
 		z.pop();
 	}
-
-	cart_cart.close();*/
 }
 
-template<class T>
-void Cart<T>::cartData() {
-	T flag = 1;
+template <class T>
+void Cart<T>::cart_data() {
+	int flag = 1;
 
 	while (flag == 1) {
 		cout
 			<< "Add to cart press :-  1" << endl
 			<< "delete item from cart  press :-  2" << endl
 			<< "display all items in cart press  :-  3" << endl;
-		T choice; cin >> choice;
+		int choice; cin >> choice;
+
+		cout << endl;
 
 		if (choice == 1) {
 			cout << "enter item id" << endl;
-			T id; cin >> id;
-
+			int id; cin >> id;
 			z.push(id);
 		}
 
@@ -59,10 +48,12 @@ void Cart<T>::cartData() {
 		}
 
 		else if (choice == 3) {
-			displayAll();
+			printall();
 		}
 
-		cout << "if you want continue press : 1" << endl << "else press : 0 ";
+		cout
+			<< "if you want continue press : 1" << endl
+			<< "else press : 0 " << endl;
 		cin >> flag;
 
 		if (flag == 1)
@@ -72,5 +63,5 @@ void Cart<T>::cartData() {
 	}
 }
 
-template <class T>
+template<class T>
 Cart<T>::~Cart(void) {}

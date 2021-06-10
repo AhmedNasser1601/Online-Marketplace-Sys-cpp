@@ -6,8 +6,7 @@ using namespace std;
 template <class T>
 class Cart {
 public:
-	Cart();
-	void displayAll();
-	void cartData();
+	void printall();
+	void cart_data();
 	~Cart(void);
 };

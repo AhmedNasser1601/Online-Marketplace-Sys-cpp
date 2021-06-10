@@ -42,6 +42,30 @@ Product<T> Product<T>::addProduct() {
 }
 
 template<class T>
+bool Product<T>::searchName(string Name) {
+	if (name == Name)
+		return true;
+
+	return false;
+}
+
+template<class T>
+bool Product<T>::searchId(T Id) {
+	if (id == Id)
+		return true;
+
+	return false;
+}
+
+template<class T>
+bool Product<T>::searchCategory(string Category) {
+	if (category == Category)
+		return true;
+
+	return false;
+}
+
+template<class T>
 void Product<T>::display() {
 	cout
 		<< "Id: " << id

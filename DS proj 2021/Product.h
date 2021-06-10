@@ -13,6 +13,9 @@ public:
 	Product();
 	Product(T, string, float, string, T);
 	Product addProduct();
+	bool searchName(string Name);
+	bool searchId(T Id);
+	bool searchCategory(string Category);
 	void display();
 	~Product(void);
 };

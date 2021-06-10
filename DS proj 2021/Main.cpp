@@ -89,6 +89,58 @@ void buyProducts() {
 	}
 }
 
+/////////////////////////////=> Product Functions <=////////////////////////////
+void searchName() {
+	cout << "Enter the Product Name to Search: ";
+	string name; cin >> name;
+
+	for (int i = 0; i < vpCounter; i++) {
+		if (vlp[i].searchName(name))
+			vlp[i].display();
+	}
+}
+void searchId() {
+	cout << "Enter the Product Id to Search: ";
+	int id; cin >> id;
+
+	for (int i = 0; i < vpCounter; i++) {
+		if (vlp[i].searchId(id))
+			vlp[i].display();
+	}
+}
+
+void searchCategory() {
+	cout << "Enter the Category Name to Search: ";
+	string category; cin >> category;
+
+	for (int i = 0; i < vpCounter; i++) {
+		if (vlp[i].searchCategory(category))
+			vlp[i].display();
+	}
+}
+
+void searchProducts() {
+	cout << "\n\t\t° Enter >-[1]-> Search by Name\n";
+	cout << "\n\t\t° Enter >-[2]-> Search by Id\n";
+	cout << "\n\t\t° Enter >-[3]-> Search by Category\n";
+
+	cout << "\n\nYour Choise is: ";
+	int searchOption = 0; cin >> searchOption;
+
+	if (searchOption == 1)
+		searchName();
+
+	else if (searchOption == 2)
+		searchId();
+
+	else if (searchOption == 3)
+		searchCategory();
+
+	else {
+		cout << "\n\n\tInvalid Option\n\n";
+	}
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 bool Back_Option_fn(int back_option) {
@@ -210,13 +262,14 @@ int main() {
 			cout << "\n\t° Enter >-[2]-> to:-> Display Customers\n";
 			cout << "\n\t° Enter >-[3]-> to:-> Customers Number\n";
 			cout << "\n\t° Enter >-[4]-> to:-> Buy Products\n";
+			cout << "\n\t° Enter >-[5]-> to:-> Search Products\n";
 			cout << "\n\n\t° Enter >-[0]-> to:-> Return Main-Menu\n\n";
 
 			cout << "\n\n\n*********\n";
 			cout << "\n\t° -> Your Choise is:-> ";
 			cin >> choiseSub;
 
-			while (choiseSub != 0 && choiseSub != 1 && choiseSub != 2 && choiseSub != 3 && choiseSub != 4) {
+			while (choiseSub != 0 && choiseSub != 1 && choiseSub != 2 && choiseSub != 3 && choiseSub != 4 && choiseSub != 5) {
 				cout << "\t\tInvalid ";
 				cout << "\n\t° -> Your Choise is:-> ";
 				cin >> choiseSub; cout << endl;
@@ -245,6 +298,12 @@ int main() {
 					system("cls");
 					cout << "\tBuy Products\n\n";
 					buyProducts();
+				}
+
+				if (choiseSub == 5) { //Search Products
+					system("cls");
+					cout << "\tSearch Products\n\n";
+					searchProducts();
 				}
 
 				if (choiseSub == 0) {
