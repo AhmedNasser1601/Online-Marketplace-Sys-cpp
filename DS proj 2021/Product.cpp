@@ -15,17 +15,18 @@ Product<T>::Product() {
 }
 
 template<class T>
-Product<T>::Product(T i, string n, float p, string c, T si) {
+Product<T>::Product(T i, string n, float p, string c, T si, T q) {
 	id = i;
 	name = n;
 	price = p;
 	category = c;
 	sellerId = si;
+	quantity = q;
 }
 
 template<class T>
 Product<T> Product<T>::addProduct() {
-	T Id, SellerId;
+	T Id, SellerId, Quantity;
 	string Name, Category;
 	float Price;
 
@@ -34,9 +35,10 @@ Product<T> Product<T>::addProduct() {
 	cout << "Enter Price: "; cin >> Price;
 	cout << "Enter Category: "; cin >> Category;
 	cout << "Enter Seller Id: "; cin >> SellerId;
+	cout << "Enter Quantity: "; cin >> Quantity;
 	cout << endl;
 
-	Product<T> p(Id, Name, Price, Category, SellerId);
+	Product<T> p(Id, Name, Price, Category, SellerId, Quantity);
 
 	return p;
 }
@@ -74,6 +76,19 @@ void Product<T>::display() {
 		<< "\tCategory: " << category
 		<< "\tSeller Id: " << sellerId
 		<< endl;
+}
+
+template<class T>
+bool Product<T>::checkQuantity(T Required) {
+	if (quantity - Required >= 0)
+		return true;
+
+	return false;
+}
+
+template<class T>
+void Product<T>::updateQuantity(T Quantity) {
+	quantity -= Quantity;
 }
 
 template <class T>

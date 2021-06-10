@@ -85,6 +85,34 @@ void buyProducts() {
 	for (int i = 0; i < vpCounter; i++) {
 		vlp[i].display();
 	}
+
+	char again = 'Y';
+
+	while (again == 'y' || again == 'Y') {
+		cout << "\n\n\tEnter Product Id you want to buy: ";
+		int id; cin >> id;
+
+		cout << "Enter Quantity: ";
+		int quantity; cin >> quantity;
+
+		for (int i = 0; i < vpCounter; i++) {
+			if (vlp[i].searchId(id)) {
+				if (vlp[i].checkQuantity(quantity)) {
+					vlp[i].updateQuantity(quantity);
+
+					//Add =(to)=> Cart Here
+
+					break;
+				}
+				else {
+					cout << "\nSorry, You can't add this Product, No available Quantity .!\n";
+					break;
+				}
+			}
+		}
+
+		cout << "\nContinue Shopping (Y/N)? : "; cin >> again;
+	}
 }
 
 /////////////////////////////=> Product Functions <=////////////////////////////
