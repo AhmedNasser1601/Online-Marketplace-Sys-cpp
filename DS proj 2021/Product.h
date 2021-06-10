@@ -17,6 +17,7 @@ public:
 	bool searchId(T Id);
 	bool searchCategory(string Category);
 	void display();
+	float getPrice();
 	bool checkQuantity(T Required);
 	void updateQuantity(T Quantity);
 	~Product(void);

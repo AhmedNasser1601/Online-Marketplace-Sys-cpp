@@ -19,7 +19,7 @@ Customer<int> C;
 
 vector<Seller<int>> vls;
 vector<Product<int>> vlp;
-vector<Customer <int>> vlc;
+vector<Customer<int>> vlc;
 
 vector<Product<int>> Cart;
 
@@ -144,6 +144,8 @@ void buyProducts() {
 
 	char again = 'Y';
 
+	float totalPrice = 0;
+
 	while (again == 'y' || again == 'Y' || again == '1') {
 		cout << "\n\n\tEnter Product Id you want to buy: ";
 		int id; cin >> id;
@@ -160,6 +162,7 @@ void buyProducts() {
 				if (vlp[i].checkQuantity(quantity)) {
 					vlp[i].updateQuantity(quantity);
 					Cart.push_back(vlp[i]); //Add =(to)=> Cart
+					totalPrice += (vlp[i].getPrice() * quantity);
 					cout << "\nAdded Successfully\n";
 					break;
 				}
@@ -175,6 +178,8 @@ void buyProducts() {
 
 		cout << "\nContinue Shopping (Y/N)? : "; cin >> again;
 	}
+
+	cout << "\n\n\tTotal Price is: " << totalPrice << endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -291,7 +296,7 @@ int main() {
 		if (choiseMenu == 2) { //Option Customer
 			system("cls");
 
-			cout << "Hello Seller\n\n";
+			cout << "Hello Customer\n\n";
 
 			////////////////////--> Options <--////////////////////
 			cout << "\n\t° Enter >-[1]-> to:-> Add New Customers\n";

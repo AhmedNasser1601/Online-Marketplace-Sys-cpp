@@ -32,7 +32,7 @@ Product<T> Product<T>::addProduct() {
 
 	cout << "Enter Id: "; cin >> Id;
 	cout << "Enter Name: "; cin >> Name;
-	cout << "Enter Price: "; cin >> Price;
+	cout << "Enter Price: $"; cin >> Price;
 	cout << "Enter Category: "; cin >> Category;
 	cout << "Enter Seller Id: "; cin >> SellerId;
 	cout << "Enter Quantity: "; cin >> Quantity;
@@ -72,11 +72,16 @@ void Product<T>::display() {
 	cout
 		<< "Id: " << id
 		<< "\tName: " << name
-		<< "\tPrice: " << price
+		<< "\tPrice: $" << price
 		<< "\tCategory: " << category
 		<< "\tSeller Id: " << sellerId
 		<< "\tQuantity: " << quantity
 		<< endl;
+}
+
+template<class T>
+float Product<T>::getPrice() {
+	return price;
 }
 
 template<class T>
