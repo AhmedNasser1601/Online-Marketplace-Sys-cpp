@@ -31,6 +31,8 @@ void addSellers() {
 	int sizeS; cin >> sizeS;
 
 	for (int i = 0; i < sizeS; i++) {
+		cout << "\nEnter Seller (" << i + 1 << ") Data :-\n";
+
 		vls.push_back(S.addSeller());
 		vsCounter++;
 	}
@@ -51,6 +53,8 @@ void addProducts() {
 	int sizeP; cin >> sizeP;
 
 	for (int i = 0; i < sizeP; i++) {
+		cout << "\nEnter Product (" << i + 1 << ") Data :-\n";
+
 		vlp.push_back(P.addProduct());
 		vpCounter++;
 	}
@@ -62,6 +66,8 @@ void addCustomers() {
 	int sizeC; cin >> sizeC;
 
 	for (int i = 0; i < sizeC; i++) {
+		cout << "\nEnter Customer (" << i + 1 << ") Data :-\n";
+
 		vlc.push_back(C.addCustomer());
 		vcCounter++;
 	}
