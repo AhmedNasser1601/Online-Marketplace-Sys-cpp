@@ -205,10 +205,27 @@ bool Back_Option_fn(int back_option) {
 
 ////////////////////////////////////////////////////////////////////////////////
 int main() {
-	/////--> Initializing <--/////
+	//////--> Initializing <--//////
 	int choiseMenu = 0;
 	int choiseSub = 0;
 	int back_option = 1;
+
+	/////--> Pre Registered <--/////
+	vls.push_back(Seller<int>(10, "s1", "e1@s1")); //Seller(1)
+	vls.push_back(Seller<int>(11, "s2", "e2@s2")); //Seller(2)
+	vsCounter += 2;
+
+	vlc.push_back(Customer<int>("c1", 12, "add1", 012, "e1@c1")); //Customer(1)
+	vlc.push_back(Customer<int>("c2", 13, "add2", 010, "e2@c2")); //Customer(2)
+	vcCounter += 2;
+
+	vlp.push_back(Product<int>(14, "p1", 50, "Cat1", 10, 11)); //Product(1)
+	vlp.push_back(Product<int>(15, "p1", 100, "Cat2", 11, 9)); //Product(2)
+	vlp.push_back(Product<int>(16, "p2", 150, "Cat3", 10, 7)); //Product(3)
+	vlp.push_back(Product<int>(16, "p3", 200, "Cat4", 11, 5)); //Product(4)
+	vlp.push_back(Product<int>(17, "p4", 250, "Cat5", 10, 3)); //Product(5)
+	vlp.push_back(Product<int>(18, "p5", 300, "Cat5", 11, 1)); //Product(6)
+	vpCounter += 6;
 
 	do {
 		system("cls");
