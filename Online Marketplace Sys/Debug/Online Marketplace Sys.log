@@ -1,7 +1,0 @@
-﻿  Customer.cpp
-  Main.cpp
-  Product.cpp
-  Seller.cpp
-  Generating Code...
-X:\Visual Studio 2019\Online-Marketplace-Sys-cpp\Online Marketplace Sys\Main.cpp(204): warning C4715: 'Back_Option_fn': not all control paths return a value
-  Online Marketplace Sys.vcxproj -> X:\Visual Studio 2019\Online-Marketplace-Sys-cpp\Debug\Online Marketplace Sys.exe
