@@ -1,18 +1,12 @@
 #include "Customer.h"
 
 #include <iostream>
-#include <stack>
-#include <queue>
-#include <list>
-#include <vector>
 #include <string>
 
 using namespace std;
 
 template<class T>
-Customer<T>::Customer() {
-
-}
+Customer<T>::Customer() {}
 
 template<class T>
 Customer<T>::Customer(string N, T I, string A, T P, string E) {
@@ -38,6 +32,14 @@ Customer<T> Customer<T>::addCustomer() {
 	Customer<T> c(Name, Id, Address, Phone, Email);
 
 	return c;
+}
+
+template<class T>
+bool Customer<T>::searchId(T Id) {
+	if (id == Id)
+		return true;
+
+	return false;
 }
 
 template<class T>

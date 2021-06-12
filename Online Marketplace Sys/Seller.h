@@ -12,6 +12,7 @@ public:
 	Seller();
 	Seller(T, string, string);
 	Seller addSeller();
+	bool searchId(T);
 	void display();
 	~Seller(void);
 };

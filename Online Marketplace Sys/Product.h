@@ -8,17 +8,20 @@ class Product {
 	T id, sellerId, quantity;
 	string name, category;
 	float price;
+	bool state;
 
 public:
 	Product();
-	Product(T, string, float, string, T, T);
-	Product addProduct();
-	bool searchName(string Name);
-	bool searchId(T Id);
-	bool searchCategory(string Category);
-	void display();
+	Product(T, string, float, string, T, T, bool);
+	Product addProduct(T);
+	bool searchName(string);
+	bool searchId(T);
+	bool searchCategory(string);
+	void display(bool);
+	void changeState(string);
 	float getPrice();
-	bool checkQuantity(T Required);
-	void updateQuantity(T Quantity);
+	bool checkQuantity(T);
+	bool checkSellerId(T);
+	void updateQuantity(T);
 	~Product(void);
 };

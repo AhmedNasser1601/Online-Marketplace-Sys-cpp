@@ -1,18 +1,12 @@
 #include "Seller.h"
 
 #include <iostream>
-#include <stack>
-#include <queue>
-#include <list>
-#include <vector>
 #include <string>
 
 using namespace std;
 
 template<class T>
-Seller<T>::Seller() {
-
-}
+Seller<T>::Seller() {}
 
 template<class T>
 Seller<T>::Seller(T i, string n, string e) {
@@ -34,6 +28,14 @@ Seller<T> Seller<T>::addSeller() {
 	Seller<T> s(Id, Name, Email);
 
 	return s;
+}
+
+template<class T>
+bool Seller<T>::searchId(T Id) {
+	if (id == Id)
+		return true;
+
+	return false;
 }
 
 template <class T>
