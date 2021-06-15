@@ -116,7 +116,7 @@ void searchName() {
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchName(name))
-			displayProducts(true);
+			vlp[i].display(true);
 	}
 
 	this_thread::sleep_for(50ms);
@@ -127,7 +127,7 @@ void searchId() {
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchId(id))
-			displayProducts(true);
+			vlp[i].display(true);
 	}
 
 	this_thread::sleep_for(50ms);
@@ -139,7 +139,7 @@ void searchCategory() {
 
 	for (int i = 0; i < vpCounter; i++) {
 		if (vlp[i].searchCategory(category))
-			displayProducts(true);
+			vlp[i].display(true);
 	}
 
 	this_thread::sleep_for(50ms);
